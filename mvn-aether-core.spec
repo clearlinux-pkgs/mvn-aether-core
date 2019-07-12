@@ -4,13 +4,14 @@
 #
 Name     : mvn-aether-core
 Version  : 0.9.0.m2
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source0  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source1  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
 Source2  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
-Source3  : https://repo1.maven.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
-Source4  : https://repo1.maven.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+Source3  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+Source4  : https://repo1.maven.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+Source5  : https://repo1.maven.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : EPL-1.0
@@ -41,11 +42,14 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aeth
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
 cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7
 
 
 %files
@@ -56,5 +60,6 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/sonatype/aether/aet
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 /usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
 /usr/share/java/.m2/repository/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
