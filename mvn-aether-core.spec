@@ -4,12 +4,14 @@
 #
 Name     : mvn-aether-core
 Version  : 0.9.0.m2
-Release  : 5
+Release  : 6
 URL      : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source0  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
-Source1  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
-Source2  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
-Source3  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+Source1  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+Source2  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+Source3  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+Source4  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+Source5  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : EPL-1.0
@@ -27,21 +29,28 @@ data components for the mvn-aether-core package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 
 
 %files
@@ -49,6 +58,8 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aeth
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
