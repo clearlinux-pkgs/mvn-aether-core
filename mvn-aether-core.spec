@@ -4,18 +4,34 @@
 #
 Name     : mvn-aether-core
 Version  : 0.9.0.m2
-Release  : 6
+Release  : 7
 URL      : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source0  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source1  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
 Source2  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
-Source3  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
-Source4  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
-Source5  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+Source3  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.jar
+Source4  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.pom
+Source5  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.jar
+Source6  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.pom
+Source7  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.jar
+Source8  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.pom
+Source9  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.jar
+Source10  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.pom
+Source11  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.jar
+Source12  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.pom
+Source13  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.jar
+Source14  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.pom
+Source15  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+Source16  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.jar
+Source17  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.pom
+Source18  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+Source19  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : EPL-1.0
 Requires: mvn-aether-core-data = %{version}-%{release}
+BuildRequires : apache-maven
+BuildRequires : buildreq-mvn
 
 %description
 No detailed description available
@@ -43,14 +59,56 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aeth
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0
+cp %{SOURCE13} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0
+cp %{SOURCE14} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+cp %{SOURCE15} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0
+cp %{SOURCE16} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0
+cp %{SOURCE17} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
+cp %{SOURCE18} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+cp %{SOURCE19} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 
 
 %files
@@ -60,7 +118,21 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aeth
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-api/1.1.0/aether-api-1.1.0.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-connector-basic/1.1.0/aether-connector-basic-1.1.0.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-impl/1.1.0/aether-impl-1.1.0.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-spi/1.1.0/aether-spi-1.1.0.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-file/1.1.0/aether-transport-file-1.1.0.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-transport-http/1.1.0/aether-transport-http-1.1.0.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.jar
+/usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
