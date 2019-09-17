@@ -4,7 +4,7 @@
 #
 Name     : mvn-aether-core
 Version  : 0.9.0.m2
-Release  : 7
+Release  : 8
 URL      : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source0  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/0.9.0.M2/aether-util-0.9.0.M2.jar
 Source1  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-api/0.9.0.M2/aether-api-0.9.0.M2.jar
@@ -26,6 +26,7 @@ Source16  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/1.1.0/
 Source17  : https://repo1.maven.org/maven2/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.pom
 Source18  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
 Source19  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+Source20  : https://repo1.maven.org/maven2/org/eclipse/aether/aether/1.1.0/aether-1.1.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : EPL-1.0
@@ -110,6 +111,9 @@ cp %{SOURCE18} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aet
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114
 cp %{SOURCE19} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.1.0
+cp %{SOURCE20} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.1.0/aether-1.1.0.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -136,3 +140,4 @@ cp %{SOURCE19} %{buildroot}/usr/share/java/.m2/repository/org/eclipse/aether/aet
 /usr/share/java/.m2/repository/org/eclipse/aether/aether-util/1.1.0/aether-util-1.1.0.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/0.9.0.M2/aether-0.9.0.M2.pom
 /usr/share/java/.m2/repository/org/eclipse/aether/aether/1.0.2.v20150114/aether-1.0.2.v20150114.pom
+/usr/share/java/.m2/repository/org/eclipse/aether/aether/1.1.0/aether-1.1.0.pom
